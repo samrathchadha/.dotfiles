@@ -50,13 +50,6 @@ g.lsp_config = {
   },
 }
 
-g.coq_settings = {
-  auto_start = "shut-up",
-  keymap = {
-    jump_to_mark = "<c-q>",
-  },
-}
-
 g.bufferline = {
   animation = true,
   auto_hide = true,

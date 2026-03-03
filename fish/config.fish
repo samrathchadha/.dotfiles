@@ -13,7 +13,7 @@ alias vim nvim
 alias v vim
 alias fn "rm -rf ~/.local/share/nvim/swap"
 alias lg lazygit
-alias ls "lsd -A"
+alias ls "lsd -lA"
 alias ll ls
 alias l ls
 alias s ls
@@ -36,7 +36,9 @@ alias vf "vim (\"fzf\")"
 alias za "nohup zathura & exit"
 alias t tmux
 alias tmuxReload "tmux source-file ~/.tmux.conf"
-alias factorial "python ~/code/factorial/factorial.py"
+alias todo "open file:///Users/samrath/vimwiki_html/to-do.html"
+alias etd "vim ~/vimwiki/to-do.wiki"
+alias llm "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3 /Users/samrath/code/locallama/locallm.py"
 
 function push
     git add .
@@ -61,6 +63,10 @@ function mkcd
     cd $argv
 end
 
+function portdie
+  lsof -i :$argv | grep -v PID | awk '{print $2}' | xargs kill
+end
+
 function tv
     touch $argv
     vim $argv
@@ -75,6 +81,18 @@ function removepath
     else
         echo "$argv[1] not found in PATH: $PATH"
     end
+end
+
+function pushtoprod
+  git clone git@github.com:samrxth/rev-frontend.git
+  rm .git
+  mv rev-frontend/.git ./
+  rm rev-frontend
+  push "hi"
+  rm .git
+  git clone git@github.com:gautvm/rev-frontend.git
+  mv rev-frontend/.git ./
+  rm rev-frontend
 end
 
 function addpaths
@@ -108,6 +126,8 @@ set -x PATH "/Library/Frameworks/Python.framework/Versions/3.11/bin" "$PATH"
 [ -f ~/.config/tabtab/fish/__tabtab.fish ]; and . ~/.config/tabtab/fish/__tabtab.fish; or true
 fish_add_path /opt/homebrew/opt/node@16/bin
 
-set -gx NVM_DIR $HOME/.nvm
-bass source /opt/homebrew/opt/nvm/nvm.sh
-bass source /opt/homebrew/opt/nvm/etc/bash_completion.d/nvm
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /Users/sam/.lmstudio/bin
+# End of LM Studio CLI section
+

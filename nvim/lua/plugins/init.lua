@@ -7,7 +7,6 @@ require("packer").startup(function(use)
   -- use("williamboman/nvim-lsp-installer")
   use ("williamboman/mason.nvim")
   use("tami5/lspsaga.nvim")
-  use("jose-elias-alvarez/null-ls.nvim")
   use({
     "jose-elias-alvarez/nvim-lsp-ts-utils",
     requires = { "nvim-lua/plenary.nvim" },
@@ -16,11 +15,11 @@ require("packer").startup(function(use)
   -- GOD
   use("github/copilot.vim")
 
-  -- Completion
-  use({
-    "ms-jpq/coq_nvim",
-    requires = { "ms-jpq/coq.thirdparty", "ms-jpq/coq.artifacts" },
-  })
+  -- -- Completion
+  -- use({
+  --   "ms-jpq/coq_nvim",
+  --   requires = { "ms-jpq/coq.thirdparty", "ms-jpq/coq.artifacts" },
+  -- })
 
   -- Formatting
   use("mhartington/formatter.nvim")
@@ -28,10 +27,10 @@ require("packer").startup(function(use)
 
   -- Treesitter/Highlighting
   use("JoosepAlviste/nvim-ts-context-commentstring")
-  use({
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  })
+  -- use({
+  --   "nvim-treesitter/nvim-treesitter",
+  --   run = ":TSUpdate",
+  -- })
   use("pantharshit00/vim-prisma")
   use("maxmellon/vim-jsx-pretty")
 
@@ -106,13 +105,13 @@ require("plugins.icons")
 require("plugins.formatter-nvim")
 require("plugins.nvimtree")
 require("plugins.lsp-saga")
-require("plugins.treesitter")
+-- require("plugins.treesitter")
 require("plugins.zenmode")
 require("plugins.trouble-nvim")
 require("plugins.telescope-nvim")
 require("plugins.comments")
-require("plugins.whichkey")
-require("plugins.coq3p")
+-- require("plugins.whichkey")
+-- require("plugins.coq3p")
 -- require("plugins.snap")
 require("plugins.indent-blankline")
 -- require("plugins.sidebar")

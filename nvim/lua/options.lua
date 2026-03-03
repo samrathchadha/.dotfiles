@@ -2,7 +2,6 @@ local vim = vim
 local opt = vim.opt
 
 opt.ruler = false
-opt.hidden = true
 opt.ignorecase = true
 opt.splitbelow = true
 opt.splitright = true
